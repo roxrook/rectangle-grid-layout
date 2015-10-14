@@ -1,5 +1,7 @@
-# RectangleLayout
-RectangleLayout is a container that arranges views into a gird of rectangles of the same sized. Note, this is NOT a meant to be replaced 
+# RectangleGridLayout
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.channguyen/rl/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.channguyen/rl)
+
+RectangleGridLayout is a container that arranges views into a gird of rectangles of the same sized. Note, this is NOT a meant to be replaced 
 GridView or TableLayout/GridLayout, rather it's a much less sophisticated container to hold views of the same size. The goal is 
 to provide a grid-like container with better performance than says TableLayout.     
 The algorithm for measuring is very simple, it only performs 2-pass measuring, one for computing dimension of each child 
@@ -23,7 +25,7 @@ Add the `com.github.channguyen.rl.RectangleLayout` to your layout XML file.
 <com.github.channguyen.rl.RectangleLayout
     android:layout_width="200dp"
     android:layout_height="300dp"
-    app:rl___column="4"
+    app:rgl___column="4"
     >
     <Button
       android:layout_width="wrap_content"

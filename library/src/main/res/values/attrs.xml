@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <declare-styleable name="RectangleLayout">
-    <attr name="rl___column" format="integer"/>
+  <declare-styleable name="RectangleGridLayout">
+    <attr name="rgl___column" format="integer"/>
   </declare-styleable>
 </resources>

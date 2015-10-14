@@ -10,10 +10,10 @@
   android:orientation="vertical"
   >
 
-  <com.github.channguyen.rl.RectangleLayout
+  <com.github.channguyen.rl.RectangleGridLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:rl___column="3"
+    app:rgl___column="3"
     >
 
     <View
@@ -41,13 +41,13 @@
       android:layout_height="30dp"
       android:background="#FFFF00"
       />
-  </com.github.channguyen.rl.RectangleLayout>
+  </com.github.channguyen.rl.RectangleGridLayout>
 
   <!-- Buttons using wrap content -->
-  <com.github.channguyen.rl.RectangleLayout
+  <com.github.channguyen.rl.RectangleGridLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:rl___column="4"
+    app:rgl___column="4"
     >
     <Button
       android:layout_width="wrap_content"
@@ -79,13 +79,13 @@
       android:layout_height="wrap_content"
       android:text="f"
       />
-  </com.github.channguyen.rl.RectangleLayout>
+  </com.github.channguyen.rl.RectangleGridLayout>
 
   <!-- Dynamic dimension -->
-  <com.github.channguyen.rl.RectangleLayout
+  <com.github.channguyen.rl.RectangleGridLayout
     android:layout_width="200dp"
     android:layout_height="300dp"
-    app:rl___column="4"
+    app:rgl___column="4"
     >
     <Button
       android:layout_width="wrap_content"
@@ -117,14 +117,14 @@
       android:layout_height="wrap_content"
       android:text="f"
       />
-  </com.github.channguyen.rl.RectangleLayout>
+  </com.github.channguyen.rl.RectangleGridLayout>
 
 
   <!-- With margins -->
-  <com.github.channguyen.rl.RectangleLayout
+  <com.github.channguyen.rl.RectangleGridLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:rl___column="3"
+    app:rgl___column="3"
     android:background="#FFFFFF"
     >
 
@@ -158,6 +158,6 @@
       android:background="#FFFF00"
       android:layout_margin="3dp"
       />
-  </com.github.channguyen.rl.RectangleLayout>
+  </com.github.channguyen.rl.RectangleGridLayout>
 
 </LinearLayout>

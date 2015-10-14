@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 /**
  * A container that arranges views into a gird of rectangles of the same sized
  */
-public class RectangleLayout extends ViewGroup {
+public class RectangleGridLayout extends ViewGroup {
 
-  private static final String TAG = RectangleLayout.class.getSimpleName();
+  private static final String TAG = RectangleGridLayout.class.getSimpleName();
 
   /**
    * Default number of column if not specified
@@ -34,15 +34,15 @@ public class RectangleLayout extends ViewGroup {
    */
   private int column;
 
-  public RectangleLayout(Context context) {
+  public RectangleGridLayout(Context context) {
     super(context);
   }
 
-  public RectangleLayout(Context context, AttributeSet attrs) {
+  public RectangleGridLayout(Context context, AttributeSet attrs) {
     super(context, attrs);
-    final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.RectangleLayout);
+    final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.RectangleGridLayout);
     try {
-      setColumn(a.getInt(R.styleable.RectangleLayout_rl___column, DEFAULT_COLUMN));
+      setColumn(a.getInt(R.styleable.RectangleGridLayout_rgl___column, DEFAULT_COLUMN));
     } finally {
       a.recycle();
     }
@@ -117,17 +117,15 @@ public class RectangleLayout extends ViewGroup {
 
     // Measure again to force all child to be cw and ch
     for (int i = 0; i < count; ++i) {
-      for (int j = 0; j < count; ++j) {
-        final View child = getChildAt(i * count + j);
-        if (child == null) {
-          continue;
-        }
-        measureChild(
-          child,
-          MeasureSpec.makeMeasureSpec(cw, MeasureSpec.EXACTLY),
-          MeasureSpec.makeMeasureSpec(ch, MeasureSpec.EXACTLY)
-        );
+      final View child = getChildAt(i);
+      if (child.getVisibility() == View.GONE) {
+        continue;
       }
+      measureChild(
+        child,
+        MeasureSpec.makeMeasureSpec(cw, MeasureSpec.EXACTLY),
+        MeasureSpec.makeMeasureSpec(ch, MeasureSpec.EXACTLY)
+      );
     }
     setMeasuredDimension(w, h);
   }
