@@ -108,26 +108,10 @@ public class RectangleGridLayout extends ViewGroup {
     if (mh == 0) {
       h = dpToPx(getContext(), DEFAULT_HEIGHT) + childMarginHeight;
     }
-
-    w = resolveSize(w, widthMeasureSpec);
-    h = resolveSize(h, heightMeasureSpec);
-
-    int cw = (int) ((float) w / column);
-    int ch = (int) ((float) h / row);
-
-    // Measure again to force all child to be cw and ch
-    for (int i = 0; i < count; ++i) {
-      final View child = getChildAt(i);
-      if (child.getVisibility() == View.GONE) {
-        continue;
-      }
-      measureChild(
-        child,
-        MeasureSpec.makeMeasureSpec(cw, MeasureSpec.EXACTLY),
-        MeasureSpec.makeMeasureSpec(ch, MeasureSpec.EXACTLY)
-      );
-    }
-    setMeasuredDimension(w, h);
+    setMeasuredDimension(
+      resolveSize(w, widthMeasureSpec),
+      resolveSize(h, heightMeasureSpec)
+    );
   }
 
   @Override

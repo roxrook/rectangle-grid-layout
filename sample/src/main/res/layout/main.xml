@@ -158,6 +158,12 @@
       android:background="#FFFF00"
       android:layout_margin="3dp"
       />
+    <View
+      android:layout_width="50dp"
+      android:layout_height="30dp"
+      android:background="#777777"
+      android:layout_margin="3dp"
+      />
   </com.github.channguyen.rl.RectangleGridLayout>
 
 </LinearLayout>

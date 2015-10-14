@@ -4,8 +4,6 @@
 RectangleGridLayout is a container that arranges views into a gird of rectangles of the same sized. Note, this is NOT a meant to be replaced 
 GridView or TableLayout/GridLayout, rather it's a much less sophisticated container to hold views of the same size. The goal is 
 to provide a grid-like container with better performance than says TableLayout.     
-The algorithm for measuring is very simple, it only performs 2-pass measuring, one for computing dimension of each child 
-and one for reinforce child view. 
 
 # Screenshots
 ![Main screen](/screenshots/sc0.png)
