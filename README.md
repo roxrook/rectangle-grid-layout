@@ -18,9 +18,9 @@ dependencies {
     compile 'com.github.channguyen:rl:1.0.0'
 }
 ```
-Add the `com.github.channguyen.rl.RectangleLayout` to your layout XML file.
+Add the `com.github.channguyen.rl.RectangleGridLayout` to your layout XML file.
 ```XML
-<com.github.channguyen.rl.RectangleLayout
+<com.github.channguyen.rl.RectangleGridLayout
     android:layout_width="200dp"
     android:layout_height="300dp"
     app:rgl___column="4"
