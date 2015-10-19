@@ -83,13 +83,7 @@ public class RectangleGridLayout extends ViewGroup {
       if (child.getVisibility() == View.GONE) {
         continue;
       }
-      measureChildWithMargins(
-        child,
-        MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED),
-        0,
-        MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED),
-        0
-      );
+      measureChild(child, widthMeasureSpec, heightMeasureSpec);
       final MarginLayoutParams lp = (MarginLayoutParams) child.getLayoutParams();
       childMarginWidth += (lp.leftMargin + lp.rightMargin);
       childMarginHeight += (lp.topMargin + lp.bottomMargin);
@@ -101,7 +95,7 @@ public class RectangleGridLayout extends ViewGroup {
     w = (mw * column) + paddingWidth + childMarginWidth;
     h = (mh * row) + paddingHeight + childMarginHeight;
 
-    // If child decide to give no with or height, use default
+    // If child decide to give no width or height, use default
     if (mw == 0) {
       w = dpToPx(getContext(), DEFAULT_WIDTH) + childMarginWidth;
     }
@@ -157,7 +151,7 @@ public class RectangleGridLayout extends ViewGroup {
         // right
         x + (y + 1) * cw - lp.rightMargin,
         // bottom
-        (x + 1) * ch - lp.topMargin
+        (x + 1) * ch - lp.bottomMargin
       );
     }
   }
